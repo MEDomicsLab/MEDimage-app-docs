@@ -6,13 +6,13 @@ description: Rundown of the user-interface and its various parts
 
 ### Opening page
 
-Upon starting the application, the following page will open, asking you to select a workspace folder to before starting to use the application:
+Upon starting the application, the following page will open, asking you to select a workspace folder to before beginning to use the application:
 
 <figure><img src=".gitbook/assets/OpeningPageDocumented.PNG" alt=""><figcaption><p>Opening page overview</p></figcaption></figure>
 
 ### Home page
 
-After setting a workspace folder, the home page will appear and you can start manipulating the application:
+After setting a workspace folder, the home page will appear, and you can start manipulating the application:
 
 <figure><img src=".gitbook/assets/HomePageDocumented.png" alt=""><figcaption><p>Home page overview</p></figcaption></figure>
 

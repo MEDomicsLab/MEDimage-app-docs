@@ -23,7 +23,7 @@
 
 ## MEDIA
 
-* [🏥 MEDimage website](https://medimage.app/)
-* [🤖 GitHub](https://github.com/MEDomics-UdeS/medimage-app/)
+* [🏥 MEDiml website](https://medimage.app/)
+* [🤖 GitHub](https://github.com/MEDomicsLab/mediml-app/)
 * [📺 YouTube](https://www.youtube.com/@MEDomicsLab)
 * [👾 Discord](https://discord.gg/kzNVmDsXWp)
