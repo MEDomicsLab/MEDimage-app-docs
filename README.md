@@ -2,6 +2,27 @@
 description: MEDiml, the application
 cover: .gitbook/assets/cancer-ai.jpg
 coverY: -9.703648548026806
+layout:
+  width: default
+  cover:
+    visible: true
+    size: full
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+  metadata:
+    visible: true
+  tags:
+    visible: true
+  actions:
+    visible: true
 ---
 
 # 👋 Welcome!
@@ -38,6 +59,6 @@ Before diving in, we recommend familiarizing yourself with the concepts of radio
 
 * To download and install the application, go to the [next page](quick-start.md).
 * For tutorials, refer to the [radiomics page](radiomics/).
-* Use [_Forms_ ](/broken/pages/8Gz5zWAIunKBFOdlHvsN)section to contact us or to report an issue.
-* The [_Media_ ](/broken/pages/yVcsDP2xHOgCYPfqgh0T)section contains all our communication and interaction websites.
+* Use [_Forms_ ](https://app.gitbook.com/s/WC0t7nEhhoOT73GRY714/forms)section to contact us or to report an issue.
+* The [_Media_ ](https://app.gitbook.com/s/WC0t7nEhhoOT73GRY714/media)section contains all our communication and interaction websites.
 * If you are ready to add your touch to our application, refer to the [contribution page](contributing.md).
