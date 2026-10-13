@@ -1,0 +1,842 @@
+{
+  "format": "mediml-learning-scene",
+  "version": 1,
+  "sceneName": "STS_Modalities_Eval",
+  "exportedAt": "2026-10-13T02:07:50.455Z",
+  "scene": {
+    "nodes": [
+      {
+        "width": 800,
+        "height": 600,
+        "id": "box-initialization",
+        "type": "boxNode",
+        "name": "Initialization",
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "draggable": false,
+        "deletable": false,
+        "zIndex": -1001,
+        "data": {
+          "id": "box-initialization",
+          "size": {
+            "width": 800,
+            "height": 600
+          },
+          "internal": {
+            "name": "Initialization",
+            "type": "box",
+            "subflowId": "MAIN",
+            "hasWarning": {
+              "state": false
+            },
+            "borderColor": "rgba(173, 230, 150, 0.8)",
+            "selectedBorderColor": "rgb(255, 187, 0)",
+            "hasRun": false,
+            "enableView": true
+          },
+          "enableView": false,
+          "setupParam": null
+        },
+        "positionAbsolute": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "width": 1200,
+        "height": 600,
+        "id": "box-training",
+        "type": "boxNode",
+        "name": "Training",
+        "position": {
+          "x": 850,
+          "y": 0
+        },
+        "draggable": false,
+        "deletable": false,
+        "zIndex": -1001,
+        "data": {
+          "id": "box-training",
+          "size": {
+            "width": 1200,
+            "height": 600
+          },
+          "internal": {
+            "name": "Training",
+            "type": "box",
+            "subflowId": "MAIN",
+            "hasWarning": {
+              "state": false
+            },
+            "borderColor": "rgba(173, 230, 150, 0.8)",
+            "selectedBorderColor": "rgb(255, 187, 0)",
+            "hasRun": false,
+            "enableView": true
+          },
+          "enableView": false,
+          "setupParam": null
+        },
+        "positionAbsolute": {
+          "x": 850,
+          "y": 0
+        }
+      },
+      {
+        "width": 200,
+        "height": 48,
+        "id": "node_40a54ad8-81a1-4f3a-9faa-08cd77939a74",
+        "type": "Analyze",
+        "name": "Analyze",
+        "position": {
+          "x": 2128,
+          "y": 250
+        },
+        "data": {
+          "internal": {
+            "name": "Analyze",
+            "img": "analyze.png",
+            "type": "analyze",
+            "hasRun": false,
+            "settings": {
+              "histogram": true,
+              "tree": false,
+              "heatmap": true,
+              "optimalLevel": false,
+              "histParams": {
+                "sortOption": "importance"
+              },
+              "heatmapParams": {
+                "metric": "AUC_mean",
+                "extraMetrics": "Sensitivity_mean,Specificity_mean",
+                "pValues": true,
+                "pValuesMethod": "ttest",
+                "title": ""
+              }
+            },
+            "subflowId": "MAIN",
+            "enableView": false,
+            "hasWarning": {
+              "state": false
+            }
+          },
+          "tooltipBy": "node",
+          "setupParam": null,
+          "enableView": false
+        },
+        "positionAbsolute": {
+          "x": 2128,
+          "y": 250
+        },
+        "dragging": false
+      },
+      {
+        "width": 200,
+        "height": 48,
+        "id": "node_b2b3af08-d13f-4703-8f80-01fd9bd98714",
+        "type": "Split",
+        "name": "Split",
+        "position": {
+          "x": 72.0430597873991,
+          "y": 250.1882665977908
+        },
+        "data": {
+          "internal": {
+            "name": "Split",
+            "img": "split.png",
+            "type": "split",
+            "hasRun": false,
+            "settings": {
+              "path_outcome_file": "C:\\mediml\\POC\\DATA\\STS_POC\\sts_poc_outcomes.csv",
+              "path_ws_experiments": "C:\\mediml\\POC\\DATA\\STS_POC",
+              "outcome_name": "STS_METS",
+              "path_save_experiments": "C:\\mediml\\POC\\DATA\\STS_POC",
+              "method": "all_learn",
+              "holdoutPercentage": 0.2,
+              "holdoutSeed": 1,
+              "active_method": [
+                "cv"
+              ],
+              "Random": {
+                "method": "SubSampling",
+                "nSplits": 10,
+                "stratifyInstitutions": true,
+                "testProportion": 0.33,
+                "seed": 54288
+              },
+              "cv": {
+                "nFolds": 10,
+                "seed": 54288
+              }
+            },
+            "subflowId": "MAIN",
+            "enableView": true,
+            "hasWarning": {
+              "state": false
+            }
+          },
+          "tooltipBy": "node",
+          "setupParam": null,
+          "enableView": false
+        },
+        "className": "",
+        "positionAbsolute": {
+          "x": 72.0430597873991,
+          "y": 250.1882665977908
+        },
+        "dragging": false
+      },
+      {
+        "width": 200,
+        "height": 48,
+        "id": "node_65cdfbe3-13bf-4adc-ace7-726be50eec96",
+        "type": "Design",
+        "name": "Design",
+        "position": {
+          "x": 342.3651065367419,
+          "y": 100.33908718046783
+        },
+        "data": {
+          "internal": {
+            "name": "Design CT",
+            "img": "optimize.png",
+            "type": "design",
+            "hasRun": false,
+            "settings": {
+              "expName": "STS_ALL_CT"
+            },
+            "subflowId": "MAIN",
+            "enableView": true,
+            "hasWarning": {
+              "state": false
+            }
+          },
+          "tooltipBy": "node",
+          "setupParam": null,
+          "enableView": false
+        },
+        "dragging": false,
+        "positionAbsolute": {
+          "x": 342.3651065367419,
+          "y": 100.33908718046783
+        }
+      },
+      {
+        "width": 200,
+        "height": 48,
+        "id": "node_25bf4e3a-5f08-4421-b6e8-fdf089230c65",
+        "type": "Design",
+        "name": "Design",
+        "position": {
+          "x": 337.9379099189157,
+          "y": 190.5829270999254
+        },
+        "data": {
+          "internal": {
+            "name": "Design PET",
+            "img": "optimize.png",
+            "type": "design",
+            "hasRun": false,
+            "settings": {
+              "expName": "STS_ALL_PET"
+            },
+            "subflowId": "MAIN",
+            "enableView": true,
+            "hasWarning": {
+              "state": false
+            }
+          },
+          "tooltipBy": "node",
+          "setupParam": null,
+          "enableView": false
+        },
+        "positionAbsolute": {
+          "x": 337.9379099189157,
+          "y": 190.5829270999254
+        },
+        "dragging": false
+      },
+      {
+        "width": 200,
+        "height": 48,
+        "id": "node_08b3497e-4ba6-4460-824b-d2d0e10a10d0",
+        "type": "Design",
+        "name": "Design",
+        "position": {
+          "x": 337.59659864983735,
+          "y": 341.3408068585373
+        },
+        "data": {
+          "internal": {
+            "name": "Design T1",
+            "img": "optimize.png",
+            "type": "design",
+            "hasRun": false,
+            "settings": {
+              "expName": "STS_ALL_T1"
+            },
+            "subflowId": "MAIN",
+            "enableView": true,
+            "hasWarning": {
+              "state": false
+            }
+          },
+          "tooltipBy": "node",
+          "setupParam": null,
+          "enableView": false
+        },
+        "positionAbsolute": {
+          "x": 337.59659864983735,
+          "y": 341.3408068585373
+        },
+        "dragging": false
+      },
+      {
+        "width": 200,
+        "height": 48,
+        "id": "node_93528984-ade0-4fdc-b60a-621fe8c01893",
+        "type": "Data",
+        "name": "Data",
+        "position": {
+          "x": 588.3797689216099,
+          "y": 102.72982613897241
+        },
+        "data": {
+          "internal": {
+            "name": "Data CT",
+            "img": "dataset.png",
+            "type": "data",
+            "hasRun": false,
+            "settings": {
+              "nameType": "Radiomics",
+              "featuresFiles": [
+                "C:\\mediml\\POC\\DATA\\STS_POC\\RadiomicsFeatures\\features(GTVp)\\radiomics__CT(GTV)__image.csv"
+              ],
+              "path": "C:\\mediml\\POC\\DATA\\STS_POC\\RadiomicsFeatures\\features(GTVp)"
+            },
+            "subflowId": "MAIN",
+            "enableView": true,
+            "hasWarning": {
+              "state": false
+            }
+          },
+          "tooltipBy": "node",
+          "setupParam": null,
+          "enableView": false
+        },
+        "className": "",
+        "positionAbsolute": {
+          "x": 588.3797689216099,
+          "y": 102.72982613897241
+        },
+        "dragging": false
+      },
+      {
+        "width": 200,
+        "height": 48,
+        "id": "node_2614e93a-37f3-44a4-9b24-c190e9ee6d26",
+        "type": "Data",
+        "name": "Data",
+        "position": {
+          "x": 588.6496690644327,
+          "y": 188.93755887023656
+        },
+        "data": {
+          "internal": {
+            "name": "Data PET",
+            "img": "dataset.png",
+            "type": "data",
+            "hasRun": false,
+            "settings": {
+              "nameType": "Radiomics",
+              "featuresFiles": [
+                "C:\\mediml\\POC\\DATA\\STS_POC\\RadiomicsFeatures\\features(GTVp)\\radiomics__PET(GTV)__image.csv"
+              ],
+              "path": "C:\\mediml\\POC\\DATA\\STS_POC\\RadiomicsFeatures\\features(GTVp)"
+            },
+            "subflowId": "MAIN",
+            "enableView": true,
+            "hasWarning": {
+              "state": false
+            }
+          },
+          "tooltipBy": "node",
+          "setupParam": null,
+          "enableView": false
+        },
+        "positionAbsolute": {
+          "x": 588.6496690644327,
+          "y": 188.93755887023656
+        },
+        "dragging": false
+      },
+      {
+        "width": 200,
+        "height": 48,
+        "id": "node_d8a0c03c-7448-405d-bcde-1f685cf2c37d",
+        "type": "Data",
+        "name": "Data",
+        "position": {
+          "x": 584.0719540533386,
+          "y": 340.7015871849025
+        },
+        "data": {
+          "internal": {
+            "name": "Data T1",
+            "img": "dataset.png",
+            "type": "data",
+            "hasRun": false,
+            "settings": {
+              "nameType": "Radiomics",
+              "featuresFiles": [
+                "C:\\mediml\\POC\\DATA\\STS_POC\\RadiomicsFeatures\\features(GTVp)\\radiomics__T1(GTV)__image.csv"
+              ],
+              "path": "C:\\mediml\\POC\\DATA\\STS_POC\\RadiomicsFeatures\\features(GTVp)"
+            },
+            "subflowId": "MAIN",
+            "enableView": true,
+            "hasWarning": {
+              "state": false
+            }
+          },
+          "tooltipBy": "node",
+          "setupParam": null,
+          "enableView": false
+        },
+        "className": "",
+        "positionAbsolute": {
+          "x": 584.0719540533386,
+          "y": 340.7015871849025
+        },
+        "dragging": false
+      },
+      {
+        "width": 200,
+        "height": 48,
+        "id": "node_daebab6c-4e67-4f4a-ab66-b0c7e128d3cc",
+        "type": "Cleaning",
+        "name": "Cleaning",
+        "position": {
+          "x": 996.1610363102809,
+          "y": 249.34149840494183
+        },
+        "data": {
+          "internal": {
+            "name": "Cleaning",
+            "img": "clean.png",
+            "type": "cleaning",
+            "hasRun": false,
+            "settings": {
+              "default": {
+                "feature": {
+                  "continuous": {
+                    "missingCutoffps": 0.25,
+                    "covCutoff": 0.1,
+                    "missingCutoffpf": 0.1,
+                    "imputation": "mean"
+                  }
+                }
+              }
+            },
+            "subflowId": "MAIN",
+            "enableView": true,
+            "hasWarning": {
+              "state": false
+            }
+          },
+          "tooltipBy": "node",
+          "setupParam": null,
+          "enableView": false
+        },
+        "positionAbsolute": {
+          "x": 996.1610363102809,
+          "y": 249.34149840494183
+        },
+        "dragging": false
+      },
+      {
+        "width": 200,
+        "height": 48,
+        "id": "node_e07b6787-982e-4078-a11b-98f6abc99cd7",
+        "type": "Normalization",
+        "name": "Normalization",
+        "position": {
+          "x": 1252.1037586032242,
+          "y": 248.02471690876212
+        },
+        "data": {
+          "internal": {
+            "name": "Normalization",
+            "img": "normalize.png",
+            "type": "normalization",
+            "hasRun": false,
+            "settings": {
+              "method": "combat"
+            },
+            "subflowId": "MAIN",
+            "enableView": true,
+            "hasWarning": {
+              "state": false
+            }
+          },
+          "tooltipBy": "node",
+          "setupParam": null,
+          "enableView": false
+        },
+        "positionAbsolute": {
+          "x": 1252.1037586032242,
+          "y": 248.02471690876212
+        },
+        "dragging": false
+      },
+      {
+        "width": 200,
+        "height": 48,
+        "id": "node_40324d5c-ccec-4517-b147-bc6ab5d1aebc",
+        "type": "FeatureReduction",
+        "name": "Feature Reduction",
+        "position": {
+          "x": 1509.3279671566422,
+          "y": 249.38227976831706
+        },
+        "data": {
+          "internal": {
+            "name": "Feature Reduction",
+            "img": "clear.png",
+            "type": "feature reduction",
+            "hasRun": false,
+            "settings": {
+              "method": "FDA",
+              "FDA": {
+                "nSplits": 100,
+                "corrType": "Spearman",
+                "threshStableStart": 0.5,
+                "threshInterCorr": 0.7,
+                "minNfeatStable": 100,
+                "minNfeatInterCorr": 60,
+                "minNfeat": 10,
+                "seed": 54288
+              }
+            },
+            "subflowId": "MAIN",
+            "enableView": true,
+            "hasWarning": {
+              "state": false
+            }
+          },
+          "tooltipBy": "node",
+          "setupParam": null,
+          "enableView": false
+        },
+        "positionAbsolute": {
+          "x": 1509.3279671566422,
+          "y": 249.38227976831706
+        },
+        "dragging": false
+      },
+      {
+        "width": 200,
+        "height": 48,
+        "id": "node_1679c1a9-7393-462a-999f-ca8a214fd3ad",
+        "type": "RadiomicsLearner",
+        "name": "Radiomics learner",
+        "position": {
+          "x": 1776.727669892057,
+          "y": 248.98652854026375
+        },
+        "data": {
+          "internal": {
+            "name": "Radiomics learner",
+            "img": "compare_models.png",
+            "type": "radiomics learner",
+            "hasRun": false,
+            "settings": {
+              "model": "best",
+              "bestInclude": [],
+              "bestExclude": [],
+              "nFeaturesToSelect": 4,
+              "optimizeThreshold": true,
+              "useGPU": true,
+              "nameSave": "best_thresh_opt",
+              "optimizationMetric": "MCC",
+              "seed": 54288
+            },
+            "subflowId": "MAIN",
+            "enableView": true,
+            "hasWarning": {
+              "state": false
+            }
+          },
+          "tooltipBy": "node",
+          "setupParam": null,
+          "enableView": false
+        },
+        "positionAbsolute": {
+          "x": 1776.727669892057,
+          "y": 248.98652854026375
+        },
+        "dragging": false,
+        "className": ""
+      },
+      {
+        "width": 200,
+        "height": 48,
+        "id": "node_6afc8045-7a7e-4693-81c8-228b162ecdff",
+        "type": "Design",
+        "name": "Design",
+        "position": {
+          "x": 345.4361624669208,
+          "y": 430.4212773119071
+        },
+        "data": {
+          "internal": {
+            "name": "Design T2FS",
+            "img": "optimize.png",
+            "type": "design",
+            "hasRun": false,
+            "settings": {
+              "expName": "STS_ALL_T2FS"
+            },
+            "subflowId": "MAIN",
+            "enableView": true,
+            "hasWarning": {
+              "state": false
+            }
+          },
+          "tooltipBy": "node",
+          "setupParam": null,
+          "enableView": false
+        },
+        "dragging": false,
+        "positionAbsolute": {
+          "x": 345.4361624669208,
+          "y": 430.4212773119071
+        }
+      },
+      {
+        "width": 200,
+        "height": 48,
+        "id": "node_f3fb8642-1d32-4262-9521-f46ffa8b3434",
+        "type": "Data",
+        "name": "Data",
+        "position": {
+          "x": 584.5671490302857,
+          "y": 426.7304711766753
+        },
+        "data": {
+          "internal": {
+            "name": "Data T2FS",
+            "img": "dataset.png",
+            "type": "data",
+            "hasRun": false,
+            "settings": {
+              "nameType": "Radiomics",
+              "featuresFiles": [
+                "C:\\mediml\\POC\\DATA\\STS_POC\\RadiomicsFeatures\\features(GTVp)\\radiomics__T2FS(GTV)__image.csv"
+              ],
+              "path": "C:\\mediml\\POC\\DATA\\STS_POC\\RadiomicsFeatures\\features(GTVp)"
+            },
+            "subflowId": "MAIN",
+            "enableView": true,
+            "hasWarning": {
+              "state": false
+            }
+          },
+          "tooltipBy": "node",
+          "setupParam": null,
+          "enableView": false
+        },
+        "className": "",
+        "positionAbsolute": {
+          "x": 584.5671490302857,
+          "y": 426.7304711766753
+        },
+        "dragging": false
+      }
+    ],
+    "edges": [
+      {
+        "source": "node_b2b3af08-d13f-4703-8f80-01fd9bd98714",
+        "sourceHandle": "0_node_b2b3af08-d13f-4703-8f80-01fd9bd98714",
+        "target": "node_65cdfbe3-13bf-4adc-ace7-726be50eec96",
+        "targetHandle": "0_node_65cdfbe3-13bf-4adc-ace7-726be50eec96",
+        "id": "reactflow__edge-node_b2b3af08-d13f-4703-8f80-01fd9bd987140_node_b2b3af08-d13f-4703-8f80-01fd9bd98714-node_65cdfbe3-13bf-4adc-ace7-726be50eec960_node_65cdfbe3-13bf-4adc-ace7-726be50eec96",
+        "data": {
+          "hasRun": false
+        },
+        "className": ""
+      },
+      {
+        "source": "node_b2b3af08-d13f-4703-8f80-01fd9bd98714",
+        "sourceHandle": "0_node_b2b3af08-d13f-4703-8f80-01fd9bd98714",
+        "target": "node_25bf4e3a-5f08-4421-b6e8-fdf089230c65",
+        "targetHandle": "0_node_25bf4e3a-5f08-4421-b6e8-fdf089230c65",
+        "id": "reactflow__edge-node_b2b3af08-d13f-4703-8f80-01fd9bd987140_node_b2b3af08-d13f-4703-8f80-01fd9bd98714-node_25bf4e3a-5f08-4421-b6e8-fdf089230c650_node_25bf4e3a-5f08-4421-b6e8-fdf089230c65",
+        "data": {
+          "hasRun": false
+        },
+        "className": ""
+      },
+      {
+        "source": "node_b2b3af08-d13f-4703-8f80-01fd9bd98714",
+        "sourceHandle": "0_node_b2b3af08-d13f-4703-8f80-01fd9bd98714",
+        "target": "node_08b3497e-4ba6-4460-824b-d2d0e10a10d0",
+        "targetHandle": "0_node_08b3497e-4ba6-4460-824b-d2d0e10a10d0",
+        "id": "reactflow__edge-node_b2b3af08-d13f-4703-8f80-01fd9bd987140_node_b2b3af08-d13f-4703-8f80-01fd9bd98714-node_08b3497e-4ba6-4460-824b-d2d0e10a10d00_node_08b3497e-4ba6-4460-824b-d2d0e10a10d0",
+        "data": {
+          "hasRun": false
+        },
+        "className": ""
+      },
+      {
+        "source": "node_65cdfbe3-13bf-4adc-ace7-726be50eec96",
+        "sourceHandle": "0_node_65cdfbe3-13bf-4adc-ace7-726be50eec96",
+        "target": "node_93528984-ade0-4fdc-b60a-621fe8c01893",
+        "targetHandle": "0_node_93528984-ade0-4fdc-b60a-621fe8c01893",
+        "id": "reactflow__edge-node_65cdfbe3-13bf-4adc-ace7-726be50eec960_node_65cdfbe3-13bf-4adc-ace7-726be50eec96-node_93528984-ade0-4fdc-b60a-621fe8c018930_node_93528984-ade0-4fdc-b60a-621fe8c01893",
+        "data": {
+          "hasRun": false
+        },
+        "className": ""
+      },
+      {
+        "source": "node_25bf4e3a-5f08-4421-b6e8-fdf089230c65",
+        "sourceHandle": "0_node_25bf4e3a-5f08-4421-b6e8-fdf089230c65",
+        "target": "node_2614e93a-37f3-44a4-9b24-c190e9ee6d26",
+        "targetHandle": "0_node_2614e93a-37f3-44a4-9b24-c190e9ee6d26",
+        "id": "reactflow__edge-node_25bf4e3a-5f08-4421-b6e8-fdf089230c650_node_25bf4e3a-5f08-4421-b6e8-fdf089230c65-node_2614e93a-37f3-44a4-9b24-c190e9ee6d260_node_2614e93a-37f3-44a4-9b24-c190e9ee6d26",
+        "data": {
+          "hasRun": false
+        },
+        "className": ""
+      },
+      {
+        "source": "node_08b3497e-4ba6-4460-824b-d2d0e10a10d0",
+        "sourceHandle": "0_node_08b3497e-4ba6-4460-824b-d2d0e10a10d0",
+        "target": "node_d8a0c03c-7448-405d-bcde-1f685cf2c37d",
+        "targetHandle": "0_node_d8a0c03c-7448-405d-bcde-1f685cf2c37d",
+        "id": "reactflow__edge-node_08b3497e-4ba6-4460-824b-d2d0e10a10d00_node_08b3497e-4ba6-4460-824b-d2d0e10a10d0-node_d8a0c03c-7448-405d-bcde-1f685cf2c37d0_node_d8a0c03c-7448-405d-bcde-1f685cf2c37d",
+        "data": {
+          "hasRun": false
+        },
+        "className": ""
+      },
+      {
+        "source": "node_93528984-ade0-4fdc-b60a-621fe8c01893",
+        "sourceHandle": "0_node_93528984-ade0-4fdc-b60a-621fe8c01893",
+        "target": "node_daebab6c-4e67-4f4a-ab66-b0c7e128d3cc",
+        "targetHandle": "0_node_daebab6c-4e67-4f4a-ab66-b0c7e128d3cc",
+        "id": "reactflow__edge-node_93528984-ade0-4fdc-b60a-621fe8c018930_node_93528984-ade0-4fdc-b60a-621fe8c01893-node_daebab6c-4e67-4f4a-ab66-b0c7e128d3cc0_node_daebab6c-4e67-4f4a-ab66-b0c7e128d3cc",
+        "data": {
+          "hasRun": false
+        },
+        "className": ""
+      },
+      {
+        "source": "node_2614e93a-37f3-44a4-9b24-c190e9ee6d26",
+        "sourceHandle": "0_node_2614e93a-37f3-44a4-9b24-c190e9ee6d26",
+        "target": "node_daebab6c-4e67-4f4a-ab66-b0c7e128d3cc",
+        "targetHandle": "0_node_daebab6c-4e67-4f4a-ab66-b0c7e128d3cc",
+        "id": "reactflow__edge-node_2614e93a-37f3-44a4-9b24-c190e9ee6d260_node_2614e93a-37f3-44a4-9b24-c190e9ee6d26-node_daebab6c-4e67-4f4a-ab66-b0c7e128d3cc0_node_daebab6c-4e67-4f4a-ab66-b0c7e128d3cc",
+        "data": {
+          "hasRun": false
+        },
+        "className": ""
+      },
+      {
+        "source": "node_d8a0c03c-7448-405d-bcde-1f685cf2c37d",
+        "sourceHandle": "0_node_d8a0c03c-7448-405d-bcde-1f685cf2c37d",
+        "target": "node_daebab6c-4e67-4f4a-ab66-b0c7e128d3cc",
+        "targetHandle": "0_node_daebab6c-4e67-4f4a-ab66-b0c7e128d3cc",
+        "id": "reactflow__edge-node_d8a0c03c-7448-405d-bcde-1f685cf2c37d0_node_d8a0c03c-7448-405d-bcde-1f685cf2c37d-node_daebab6c-4e67-4f4a-ab66-b0c7e128d3cc0_node_daebab6c-4e67-4f4a-ab66-b0c7e128d3cc",
+        "data": {
+          "hasRun": false
+        },
+        "className": ""
+      },
+      {
+        "source": "node_daebab6c-4e67-4f4a-ab66-b0c7e128d3cc",
+        "sourceHandle": "0_node_daebab6c-4e67-4f4a-ab66-b0c7e128d3cc",
+        "target": "node_e07b6787-982e-4078-a11b-98f6abc99cd7",
+        "targetHandle": "0_node_e07b6787-982e-4078-a11b-98f6abc99cd7",
+        "id": "reactflow__edge-node_daebab6c-4e67-4f4a-ab66-b0c7e128d3cc0_node_daebab6c-4e67-4f4a-ab66-b0c7e128d3cc-node_e07b6787-982e-4078-a11b-98f6abc99cd70_node_e07b6787-982e-4078-a11b-98f6abc99cd7",
+        "data": {
+          "hasRun": false
+        },
+        "className": ""
+      },
+      {
+        "source": "node_e07b6787-982e-4078-a11b-98f6abc99cd7",
+        "sourceHandle": "0_node_e07b6787-982e-4078-a11b-98f6abc99cd7",
+        "target": "node_40324d5c-ccec-4517-b147-bc6ab5d1aebc",
+        "targetHandle": "0_node_40324d5c-ccec-4517-b147-bc6ab5d1aebc",
+        "id": "reactflow__edge-node_e07b6787-982e-4078-a11b-98f6abc99cd70_node_e07b6787-982e-4078-a11b-98f6abc99cd7-node_40324d5c-ccec-4517-b147-bc6ab5d1aebc0_node_40324d5c-ccec-4517-b147-bc6ab5d1aebc",
+        "data": {
+          "hasRun": false
+        },
+        "className": ""
+      },
+      {
+        "source": "node_40324d5c-ccec-4517-b147-bc6ab5d1aebc",
+        "sourceHandle": "0_node_40324d5c-ccec-4517-b147-bc6ab5d1aebc",
+        "target": "node_1679c1a9-7393-462a-999f-ca8a214fd3ad",
+        "targetHandle": "0_node_1679c1a9-7393-462a-999f-ca8a214fd3ad",
+        "id": "reactflow__edge-node_40324d5c-ccec-4517-b147-bc6ab5d1aebc0_node_40324d5c-ccec-4517-b147-bc6ab5d1aebc-node_1679c1a9-7393-462a-999f-ca8a214fd3ad0_node_1679c1a9-7393-462a-999f-ca8a214fd3ad",
+        "data": {
+          "hasRun": false
+        },
+        "className": ""
+      },
+      {
+        "source": "node_1679c1a9-7393-462a-999f-ca8a214fd3ad",
+        "sourceHandle": "0_node_1679c1a9-7393-462a-999f-ca8a214fd3ad",
+        "target": "node_40a54ad8-81a1-4f3a-9faa-08cd77939a74",
+        "targetHandle": "0_node_40a54ad8-81a1-4f3a-9faa-08cd77939a74",
+        "id": "reactflow__edge-node_1679c1a9-7393-462a-999f-ca8a214fd3ad0_node_1679c1a9-7393-462a-999f-ca8a214fd3ad-node_40a54ad8-81a1-4f3a-9faa-08cd77939a740_node_40a54ad8-81a1-4f3a-9faa-08cd77939a74",
+        "data": {
+          "hasRun": false
+        },
+        "className": ""
+      },
+      {
+        "source": "node_b2b3af08-d13f-4703-8f80-01fd9bd98714",
+        "sourceHandle": "0_node_b2b3af08-d13f-4703-8f80-01fd9bd98714",
+        "target": "node_6afc8045-7a7e-4693-81c8-228b162ecdff",
+        "targetHandle": "0_node_6afc8045-7a7e-4693-81c8-228b162ecdff",
+        "id": "reactflow__edge-node_b2b3af08-d13f-4703-8f80-01fd9bd987140_node_b2b3af08-d13f-4703-8f80-01fd9bd98714-node_6afc8045-7a7e-4693-81c8-228b162ecdff0_node_6afc8045-7a7e-4693-81c8-228b162ecdff",
+        "data": {
+          "hasRun": false
+        },
+        "className": ""
+      },
+      {
+        "source": "node_6afc8045-7a7e-4693-81c8-228b162ecdff",
+        "sourceHandle": "0_node_6afc8045-7a7e-4693-81c8-228b162ecdff",
+        "target": "node_f3fb8642-1d32-4262-9521-f46ffa8b3434",
+        "targetHandle": "0_node_f3fb8642-1d32-4262-9521-f46ffa8b3434",
+        "id": "reactflow__edge-node_6afc8045-7a7e-4693-81c8-228b162ecdff0_node_6afc8045-7a7e-4693-81c8-228b162ecdff-node_f3fb8642-1d32-4262-9521-f46ffa8b34340_node_f3fb8642-1d32-4262-9521-f46ffa8b3434",
+        "data": {
+          "hasRun": false
+        },
+        "className": ""
+      },
+      {
+        "source": "node_f3fb8642-1d32-4262-9521-f46ffa8b3434",
+        "sourceHandle": "0_node_f3fb8642-1d32-4262-9521-f46ffa8b3434",
+        "target": "node_daebab6c-4e67-4f4a-ab66-b0c7e128d3cc",
+        "targetHandle": "0_node_daebab6c-4e67-4f4a-ab66-b0c7e128d3cc",
+        "id": "reactflow__edge-node_f3fb8642-1d32-4262-9521-f46ffa8b34340_node_f3fb8642-1d32-4262-9521-f46ffa8b3434-node_daebab6c-4e67-4f4a-ab66-b0c7e128d3cc0_node_daebab6c-4e67-4f4a-ab66-b0c7e128d3cc",
+        "data": {
+          "hasRun": false
+        },
+        "className": ""
+      }
+    ],
+    "viewport": {
+      "x": 72.01982660905185,
+      "y": 290.52593548167334,
+      "zoom": 0.5743491774985182
+    }
+  }
+}

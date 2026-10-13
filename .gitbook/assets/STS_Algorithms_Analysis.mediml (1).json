@@ -1,0 +1,1157 @@
+{
+  "format": "mediml-learning-scene",
+  "version": 1,
+  "sceneName": "STS_Algorithms_Analysis",
+  "exportedAt": "2026-10-13T02:04:14.869Z",
+  "scene": {
+    "nodes": [
+      {
+        "width": 800,
+        "height": 600,
+        "id": "box-initialization",
+        "type": "boxNode",
+        "name": "Initialization",
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "draggable": false,
+        "deletable": false,
+        "zIndex": -1001,
+        "data": {
+          "id": "box-initialization",
+          "size": {
+            "width": 800,
+            "height": 600
+          },
+          "internal": {
+            "name": "Initialization",
+            "type": "box",
+            "subflowId": "MAIN",
+            "hasWarning": {
+              "state": false
+            },
+            "borderColor": "rgba(173, 230, 150, 0.8)",
+            "selectedBorderColor": "rgb(255, 187, 0)",
+            "hasRun": false
+          },
+          "enableView": false,
+          "setupParam": null
+        },
+        "positionAbsolute": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "width": 1200,
+        "height": 600,
+        "id": "box-training",
+        "type": "boxNode",
+        "name": "Training",
+        "position": {
+          "x": 850,
+          "y": 0
+        },
+        "draggable": false,
+        "deletable": false,
+        "zIndex": -1001,
+        "data": {
+          "id": "box-training",
+          "size": {
+            "width": 1200,
+            "height": 600
+          },
+          "internal": {
+            "name": "Training",
+            "type": "box",
+            "subflowId": "MAIN",
+            "hasWarning": {
+              "state": false
+            },
+            "borderColor": "rgba(173, 230, 150, 0.8)",
+            "selectedBorderColor": "rgb(255, 187, 0)",
+            "hasRun": false
+          },
+          "enableView": false,
+          "setupParam": null
+        },
+        "positionAbsolute": {
+          "x": 850,
+          "y": 0
+        }
+      },
+      {
+        "width": 200,
+        "height": 48,
+        "id": "node_40a54ad8-81a1-4f3a-9faa-08cd77939a74",
+        "type": "Analyze",
+        "name": "Analyze",
+        "position": {
+          "x": 2128,
+          "y": 250
+        },
+        "data": {
+          "internal": {
+            "name": "Analyze",
+            "img": "analyze.png",
+            "type": "analyze",
+            "hasRun": false,
+            "settings": {
+              "histogram": true,
+              "tree": false,
+              "heatmap": true,
+              "optimalLevel": false,
+              "histParams": {
+                "sortOption": "importance"
+              },
+              "heatmapParams": {
+                "metric": "AUC_mean",
+                "extraMetrics": "Sensitivity_mean,Specificity_mean",
+                "pValues": true,
+                "pValuesMethod": "ttest",
+                "title": ""
+              }
+            },
+            "subflowId": "MAIN",
+            "enableView": false,
+            "hasWarning": {
+              "state": false
+            }
+          },
+          "tooltipBy": "node",
+          "setupParam": null,
+          "enableView": false
+        },
+        "positionAbsolute": {
+          "x": 2128,
+          "y": 250
+        },
+        "dragging": false
+      },
+      {
+        "width": 200,
+        "height": 48,
+        "id": "node_b2b3af08-d13f-4703-8f80-01fd9bd98714",
+        "type": "Split",
+        "name": "Split",
+        "position": {
+          "x": 67.29956801241394,
+          "y": 247.89086988779678
+        },
+        "data": {
+          "internal": {
+            "name": "Split",
+            "img": "split.png",
+            "type": "split",
+            "hasRun": false,
+            "settings": {
+              "path_outcome_file": "C:\\mediml\\POC\\DATA\\STS_POC\\sts_poc_outcomes.csv",
+              "path_ws_experiments": "C:\\mediml\\POC\\DATA\\STS_POC",
+              "outcome_name": "STS_METS",
+              "path_save_experiments": "C:\\mediml\\POC\\DATA\\STS_POC",
+              "method": "random",
+              "holdoutPercentage": 0.2,
+              "holdoutSeed": 54288,
+              "active_method": [
+                "cv"
+              ],
+              "Random": {
+                "method": "SubSampling",
+                "nSplits": 10,
+                "stratifyInstitutions": true,
+                "testProportion": 0.33,
+                "seed": 54288
+              },
+              "cv": {
+                "nFolds": 10,
+                "seed": 54288
+              }
+            },
+            "subflowId": "MAIN",
+            "enableView": false,
+            "hasWarning": {
+              "state": false
+            }
+          },
+          "tooltipBy": "node",
+          "setupParam": null,
+          "enableView": false
+        },
+        "className": "",
+        "positionAbsolute": {
+          "x": 67.29956801241394,
+          "y": 247.89086988779678
+        },
+        "dragging": false
+      },
+      {
+        "width": 200,
+        "height": 48,
+        "id": "node_65cdfbe3-13bf-4adc-ace7-726be50eec96",
+        "type": "Design",
+        "name": "Design",
+        "position": {
+          "x": 343.7236574381484,
+          "y": 161.9338806004559
+        },
+        "data": {
+          "internal": {
+            "name": "Design XGBoost",
+            "img": "optimize.png",
+            "type": "design",
+            "hasRun": false,
+            "settings": {
+              "expName": "STS_XGBoost_CT"
+            },
+            "subflowId": "MAIN",
+            "enableView": false,
+            "hasWarning": {
+              "state": false
+            }
+          },
+          "tooltipBy": "node",
+          "setupParam": null,
+          "enableView": false
+        },
+        "dragging": false,
+        "positionAbsolute": {
+          "x": 343.7236574381484,
+          "y": 161.9338806004559
+        }
+      },
+      {
+        "width": 200,
+        "height": 48,
+        "id": "node_25bf4e3a-5f08-4421-b6e8-fdf089230c65",
+        "type": "Design",
+        "name": "Design",
+        "position": {
+          "x": 336.9379099189157,
+          "y": 248.88032380991936
+        },
+        "data": {
+          "internal": {
+            "name": "Design LR",
+            "img": "optimize.png",
+            "type": "design",
+            "hasRun": false,
+            "settings": {
+              "expName": "STS_LR_CT"
+            },
+            "subflowId": "MAIN",
+            "enableView": false,
+            "hasWarning": {
+              "state": false
+            }
+          },
+          "tooltipBy": "node",
+          "setupParam": null,
+          "enableView": false
+        },
+        "positionAbsolute": {
+          "x": 336.9379099189157,
+          "y": 248.88032380991936
+        },
+        "dragging": false
+      },
+      {
+        "width": 200,
+        "height": 48,
+        "id": "node_08b3497e-4ba6-4460-824b-d2d0e10a10d0",
+        "type": "Design",
+        "name": "Design",
+        "position": {
+          "x": 338.3544569330926,
+          "y": 341.3408068585373
+        },
+        "data": {
+          "internal": {
+            "name": "Design Best",
+            "img": "optimize.png",
+            "type": "design",
+            "hasRun": false,
+            "settings": {
+              "expName": "STS_Best_CT"
+            },
+            "subflowId": "MAIN",
+            "enableView": false,
+            "hasWarning": {
+              "state": false
+            }
+          },
+          "tooltipBy": "node",
+          "setupParam": null,
+          "enableView": false
+        },
+        "positionAbsolute": {
+          "x": 338.3544569330926,
+          "y": 341.3408068585373
+        },
+        "dragging": false
+      },
+      {
+        "width": 200,
+        "height": 48,
+        "id": "node_daebab6c-4e67-4f4a-ab66-b0c7e128d3cc",
+        "type": "Cleaning",
+        "name": "Cleaning",
+        "position": {
+          "x": 946.1733772924692,
+          "y": 167.26741925329858
+        },
+        "data": {
+          "internal": {
+            "name": "Cleaning",
+            "img": "clean.png",
+            "type": "cleaning",
+            "hasRun": false,
+            "settings": {
+              "default": {
+                "feature": {
+                  "continuous": {
+                    "missingCutoffps": 0.25,
+                    "covCutoff": 0.1,
+                    "missingCutoffpf": 0.1,
+                    "imputation": "mean"
+                  }
+                }
+              }
+            },
+            "subflowId": "MAIN",
+            "enableView": false,
+            "hasWarning": {
+              "state": false
+            }
+          },
+          "tooltipBy": "node",
+          "setupParam": null,
+          "enableView": false
+        },
+        "positionAbsolute": {
+          "x": 946.1733772924692,
+          "y": 167.26741925329858
+        },
+        "dragging": false
+      },
+      {
+        "width": 200,
+        "height": 48,
+        "id": "node_e07b6787-982e-4078-a11b-98f6abc99cd7",
+        "type": "Normalization",
+        "name": "Normalization",
+        "position": {
+          "x": 1223.56151607664,
+          "y": 164.7927272796784
+        },
+        "data": {
+          "internal": {
+            "name": "Normalization",
+            "img": "normalize.png",
+            "type": "normalization",
+            "hasRun": false,
+            "settings": {
+              "method": "combat"
+            },
+            "subflowId": "MAIN",
+            "enableView": false,
+            "hasWarning": {
+              "state": false
+            }
+          },
+          "tooltipBy": "node",
+          "setupParam": null,
+          "enableView": false
+        },
+        "positionAbsolute": {
+          "x": 1223.56151607664,
+          "y": 164.7927272796784
+        },
+        "dragging": false
+      },
+      {
+        "width": 200,
+        "height": 48,
+        "id": "node_40324d5c-ccec-4517-b147-bc6ab5d1aebc",
+        "type": "FeatureReduction",
+        "name": "Feature Reduction",
+        "position": {
+          "x": 1503.2651008906007,
+          "y": 167.5335851767557
+        },
+        "data": {
+          "internal": {
+            "name": "Feature Reduction",
+            "img": "clear.png",
+            "type": "feature reduction",
+            "hasRun": false,
+            "settings": {
+              "method": "FDA",
+              "FDA": {
+                "nSplits": 100,
+                "corrType": "Spearman",
+                "threshStableStart": 0.5,
+                "threshInterCorr": 0.7,
+                "minNfeatStable": 100,
+                "minNfeatInterCorr": 60,
+                "minNfeat": 10,
+                "seed": 54288
+              }
+            },
+            "subflowId": "MAIN",
+            "enableView": false,
+            "hasWarning": {
+              "state": false
+            }
+          },
+          "tooltipBy": "node",
+          "setupParam": null,
+          "enableView": false
+        },
+        "positionAbsolute": {
+          "x": 1503.2651008906007,
+          "y": 167.5335851767557
+        },
+        "dragging": false
+      },
+      {
+        "width": 200,
+        "height": 48,
+        "id": "node_1679c1a9-7393-462a-999f-ca8a214fd3ad",
+        "type": "RadiomicsLearner",
+        "name": "Radiomics learner",
+        "position": {
+          "x": 1766.117653926484,
+          "y": 170.16926708172315
+        },
+        "data": {
+          "internal": {
+            "name": "Radiomics learner",
+            "img": "compare_models.png",
+            "type": "radiomics learner",
+            "hasRun": false,
+            "settings": {
+              "model": "xgboost",
+              "bestInclude": [],
+              "bestExclude": [],
+              "nFeaturesToSelect": 4,
+              "optimizeThreshold": true,
+              "useGPU": true,
+              "nameSave": "xgboost_w_thresh_opt",
+              "optimizationMetric": "MCC",
+              "seed": 54288
+            },
+            "subflowId": "MAIN",
+            "enableView": false,
+            "hasWarning": {
+              "state": false
+            }
+          },
+          "tooltipBy": "node",
+          "setupParam": null,
+          "enableView": false
+        },
+        "positionAbsolute": {
+          "x": 1766.117653926484,
+          "y": 170.16926708172315
+        },
+        "dragging": false,
+        "className": ""
+      },
+      {
+        "width": 200,
+        "height": 48,
+        "id": "node_827b7288-1dfa-47ca-b731-04cd433a706d",
+        "type": "Cleaning",
+        "name": "Cleaning",
+        "position": {
+          "x": 951.2809085856986,
+          "y": 253.85135471478685
+        },
+        "data": {
+          "internal": {
+            "name": "Cleaning",
+            "img": "clean.png",
+            "type": "cleaning",
+            "hasRun": false,
+            "settings": {
+              "default": {
+                "feature": {
+                  "continuous": {
+                    "missingCutoffps": 0.25,
+                    "covCutoff": 0.1,
+                    "missingCutoffpf": 0.1,
+                    "imputation": "mean"
+                  }
+                }
+              }
+            },
+            "subflowId": "MAIN",
+            "enableView": false,
+            "hasWarning": {
+              "state": false
+            }
+          },
+          "tooltipBy": "node",
+          "setupParam": null,
+          "enableView": false
+        },
+        "positionAbsolute": {
+          "x": 951.2809085856986,
+          "y": 253.85135471478685
+        },
+        "dragging": false
+      },
+      {
+        "width": 200,
+        "height": 48,
+        "id": "node_d23945bf-e694-4280-bad5-404970265629",
+        "type": "Cleaning",
+        "name": "Cleaning",
+        "position": {
+          "x": 952.7986714578497,
+          "y": 334.7733767076115
+        },
+        "data": {
+          "internal": {
+            "name": "Cleaning",
+            "img": "clean.png",
+            "type": "cleaning",
+            "hasRun": false,
+            "settings": {
+              "default": {
+                "feature": {
+                  "continuous": {
+                    "missingCutoffps": 0.25,
+                    "covCutoff": 0.1,
+                    "missingCutoffpf": 0.1,
+                    "imputation": "mean"
+                  }
+                }
+              }
+            },
+            "subflowId": "MAIN",
+            "enableView": false,
+            "hasWarning": {
+              "state": false
+            }
+          },
+          "tooltipBy": "node",
+          "setupParam": null,
+          "enableView": false
+        },
+        "positionAbsolute": {
+          "x": 952.7986714578497,
+          "y": 334.7733767076115
+        },
+        "dragging": false
+      },
+      {
+        "width": 200,
+        "height": 48,
+        "id": "node_6fe226d2-505f-4cdb-a7ee-ab6a7b784f1b",
+        "type": "Normalization",
+        "name": "Normalization",
+        "position": {
+          "x": 1236.053233319371,
+          "y": 331.8053914045327
+        },
+        "data": {
+          "internal": {
+            "name": "Normalization",
+            "img": "normalize.png",
+            "type": "normalization",
+            "hasRun": false,
+            "settings": {
+              "method": "combat"
+            },
+            "subflowId": "MAIN",
+            "enableView": false,
+            "hasWarning": {
+              "state": false
+            }
+          },
+          "tooltipBy": "node",
+          "setupParam": null,
+          "enableView": false
+        },
+        "positionAbsolute": {
+          "x": 1236.053233319371,
+          "y": 331.8053914045327
+        },
+        "dragging": false
+      },
+      {
+        "width": 200,
+        "height": 48,
+        "id": "node_7518e11d-22fc-4d3e-8767-3d55722a998f",
+        "type": "Normalization",
+        "name": "Normalization",
+        "position": {
+          "x": 1235.6531811251857,
+          "y": 249.5735862605119
+        },
+        "data": {
+          "internal": {
+            "name": "Normalization",
+            "img": "normalize.png",
+            "type": "normalization",
+            "hasRun": false,
+            "settings": {
+              "method": "combat"
+            },
+            "subflowId": "MAIN",
+            "enableView": false,
+            "hasWarning": {
+              "state": false
+            }
+          },
+          "tooltipBy": "node",
+          "setupParam": null,
+          "enableView": false
+        },
+        "positionAbsolute": {
+          "x": 1235.6531811251857,
+          "y": 249.5735862605119
+        },
+        "dragging": false
+      },
+      {
+        "width": 200,
+        "height": 48,
+        "id": "node_5de76c25-f3f9-4548-a4c1-8a0f7c464157",
+        "type": "FeatureReduction",
+        "name": "Feature Reduction",
+        "position": {
+          "x": 1500.6700986431536,
+          "y": 327.6325617212194
+        },
+        "data": {
+          "internal": {
+            "name": "Feature Reduction",
+            "img": "clear.png",
+            "type": "feature reduction",
+            "hasRun": false,
+            "settings": {
+              "method": "FDA",
+              "FDA": {
+                "nSplits": 100,
+                "corrType": "Spearman",
+                "threshStableStart": 0.5,
+                "threshInterCorr": 0.7,
+                "minNfeatStable": 100,
+                "minNfeatInterCorr": 60,
+                "minNfeat": 10,
+                "seed": 54288
+              }
+            },
+            "subflowId": "MAIN",
+            "enableView": false,
+            "hasWarning": {
+              "state": false
+            }
+          },
+          "tooltipBy": "node",
+          "setupParam": null,
+          "enableView": false
+        },
+        "positionAbsolute": {
+          "x": 1500.6700986431536,
+          "y": 327.6325617212194
+        },
+        "dragging": false
+      },
+      {
+        "width": 200,
+        "height": 48,
+        "id": "node_d1d5b487-e1a3-4001-9444-b9d8304d6138",
+        "type": "FeatureReduction",
+        "name": "Feature Reduction",
+        "position": {
+          "x": 1499.8305357568886,
+          "y": 251.18752135717995
+        },
+        "data": {
+          "internal": {
+            "name": "Feature Reduction",
+            "img": "clear.png",
+            "type": "feature reduction",
+            "hasRun": false,
+            "settings": {
+              "method": "FDA",
+              "FDA": {
+                "nSplits": 100,
+                "corrType": "Spearman",
+                "threshStableStart": 0.5,
+                "threshInterCorr": 0.7,
+                "minNfeatStable": 100,
+                "minNfeatInterCorr": 60,
+                "minNfeat": 10,
+                "seed": 54288
+              }
+            },
+            "subflowId": "MAIN",
+            "enableView": false,
+            "hasWarning": {
+              "state": false
+            }
+          },
+          "tooltipBy": "node",
+          "setupParam": null,
+          "enableView": false
+        },
+        "positionAbsolute": {
+          "x": 1499.8305357568886,
+          "y": 251.18752135717995
+        },
+        "dragging": false
+      },
+      {
+        "width": 200,
+        "height": 48,
+        "id": "node_a9f8a376-4b3c-4369-89fa-e29b634a6bf2",
+        "type": "RadiomicsLearner",
+        "name": "Radiomics learner",
+        "position": {
+          "x": 1765.7826988568188,
+          "y": 327.19679524652923
+        },
+        "data": {
+          "internal": {
+            "name": "Radiomics learner",
+            "img": "compare_models.png",
+            "type": "radiomics learner",
+            "hasRun": false,
+            "settings": {
+              "model": "best",
+              "bestInclude": [],
+              "bestExclude": [],
+              "nFeaturesToSelect": 4,
+              "optimizeThreshold": true,
+              "useGPU": true,
+              "nameSave": "Best_w_thresh_opt",
+              "optimizationMetric": "MCC",
+              "seed": 54288
+            },
+            "subflowId": "MAIN",
+            "enableView": false,
+            "hasWarning": {
+              "state": false
+            }
+          },
+          "tooltipBy": "node",
+          "setupParam": null,
+          "enableView": false
+        },
+        "positionAbsolute": {
+          "x": 1765.7826988568188,
+          "y": 327.19679524652923
+        },
+        "dragging": false,
+        "className": ""
+      },
+      {
+        "width": 200,
+        "height": 48,
+        "id": "node_67afb475-865c-4eed-a946-9e04f67028ec",
+        "type": "RadiomicsLearner",
+        "name": "Radiomics learner",
+        "position": {
+          "x": 1762.3538898440809,
+          "y": 254.05275018283947
+        },
+        "data": {
+          "internal": {
+            "name": "Radiomics learner",
+            "img": "compare_models.png",
+            "type": "radiomics learner",
+            "hasRun": false,
+            "settings": {
+              "model": "lr",
+              "bestInclude": [],
+              "bestExclude": [],
+              "nFeaturesToSelect": 4,
+              "optimizeThreshold": true,
+              "useGPU": true,
+              "nameSave": "lr_w_thresh_opt",
+              "optimizationMetric": "MCC",
+              "seed": 54288
+            },
+            "subflowId": "MAIN",
+            "enableView": false,
+            "hasWarning": {
+              "state": false
+            }
+          },
+          "tooltipBy": "node",
+          "setupParam": null,
+          "enableView": false
+        },
+        "positionAbsolute": {
+          "x": 1762.3538898440809,
+          "y": 254.05275018283947
+        },
+        "dragging": false,
+        "className": ""
+      },
+      {
+        "width": 200,
+        "height": 48,
+        "id": "node_6d9d3623-d213-4b5d-b8a7-02e3b41d9cc4",
+        "type": "Data",
+        "name": "Data",
+        "position": {
+          "x": 587.5067830132222,
+          "y": 160.9000247131548
+        },
+        "data": {
+          "internal": {
+            "name": "Data",
+            "img": "dataset.png",
+            "type": "data",
+            "hasRun": false,
+            "settings": {
+              "nameType": "Radiomics",
+              "featuresFiles": [
+                "C:\\mediml\\POC\\DATA\\STS_POC\\RadiomicsFeatures\\features(GTVp)\\CT\\intensity\\radiomics__CT(GTV)__int.csv"
+              ],
+              "path": "C:\\mediml\\POC\\DATA\\STS_POC\\RadiomicsFeatures\\features(GTVp)\\CT\\intensity"
+            },
+            "subflowId": "MAIN",
+            "enableView": false,
+            "hasWarning": {
+              "state": false
+            }
+          },
+          "tooltipBy": "node",
+          "setupParam": null,
+          "enableView": false
+        },
+        "positionAbsolute": {
+          "x": 587.5067830132222,
+          "y": 160.9000247131548
+        },
+        "dragging": false,
+        "className": ""
+      },
+      {
+        "width": 200,
+        "height": 48,
+        "id": "node_b2fed9cb-dd83-4e97-b0b3-abf4d5e979a5",
+        "type": "Data",
+        "name": "Data",
+        "position": {
+          "x": 583.2345933352441,
+          "y": 251.36904696621968
+        },
+        "data": {
+          "internal": {
+            "name": "Data",
+            "img": "dataset.png",
+            "type": "data",
+            "hasRun": false,
+            "settings": {
+              "nameType": "Radiomics",
+              "featuresFiles": [
+                "C:\\mediml\\POC\\DATA\\STS_POC\\RadiomicsFeatures\\features(GTVp)\\CT\\intensity\\radiomics__CT(GTV)__int.csv"
+              ],
+              "path": "C:\\mediml\\POC\\DATA\\STS_POC\\RadiomicsFeatures\\features(GTVp)\\CT\\intensity"
+            },
+            "subflowId": "MAIN",
+            "enableView": false,
+            "hasWarning": {
+              "state": false
+            }
+          },
+          "tooltipBy": "node",
+          "setupParam": null,
+          "enableView": false
+        },
+        "className": "",
+        "positionAbsolute": {
+          "x": 583.2345933352441,
+          "y": 251.36904696621968
+        },
+        "dragging": false
+      },
+      {
+        "width": 200,
+        "height": 48,
+        "id": "node_abf4d086-fcfe-4032-bf85-520fed170203",
+        "type": "Data",
+        "name": "Data",
+        "position": {
+          "x": 588.9844241086146,
+          "y": 343.3732369305627
+        },
+        "data": {
+          "internal": {
+            "name": "Data",
+            "img": "dataset.png",
+            "type": "data",
+            "hasRun": false,
+            "settings": {
+              "nameType": "Radiomics",
+              "featuresFiles": [
+                "C:\\mediml\\POC\\DATA\\STS_POC\\RadiomicsFeatures\\features(GTVp)\\CT\\intensity\\radiomics__CT(GTV)__int.csv"
+              ],
+              "path": "C:\\mediml\\POC\\DATA\\STS_POC\\RadiomicsFeatures\\features(GTVp)\\CT\\intensity"
+            },
+            "subflowId": "MAIN",
+            "enableView": false,
+            "hasWarning": {
+              "state": false
+            }
+          },
+          "tooltipBy": "node",
+          "setupParam": null,
+          "enableView": false
+        },
+        "className": "",
+        "positionAbsolute": {
+          "x": 588.9844241086146,
+          "y": 343.3732369305627
+        },
+        "dragging": false
+      }
+    ],
+    "edges": [
+      {
+        "source": "node_b2b3af08-d13f-4703-8f80-01fd9bd98714",
+        "sourceHandle": "0_node_b2b3af08-d13f-4703-8f80-01fd9bd98714",
+        "target": "node_65cdfbe3-13bf-4adc-ace7-726be50eec96",
+        "targetHandle": "0_node_65cdfbe3-13bf-4adc-ace7-726be50eec96",
+        "id": "reactflow__edge-node_b2b3af08-d13f-4703-8f80-01fd9bd987140_node_b2b3af08-d13f-4703-8f80-01fd9bd98714-node_65cdfbe3-13bf-4adc-ace7-726be50eec960_node_65cdfbe3-13bf-4adc-ace7-726be50eec96",
+        "data": {
+          "hasRun": false
+        },
+        "className": ""
+      },
+      {
+        "source": "node_b2b3af08-d13f-4703-8f80-01fd9bd98714",
+        "sourceHandle": "0_node_b2b3af08-d13f-4703-8f80-01fd9bd98714",
+        "target": "node_25bf4e3a-5f08-4421-b6e8-fdf089230c65",
+        "targetHandle": "0_node_25bf4e3a-5f08-4421-b6e8-fdf089230c65",
+        "id": "reactflow__edge-node_b2b3af08-d13f-4703-8f80-01fd9bd987140_node_b2b3af08-d13f-4703-8f80-01fd9bd98714-node_25bf4e3a-5f08-4421-b6e8-fdf089230c650_node_25bf4e3a-5f08-4421-b6e8-fdf089230c65",
+        "data": {
+          "hasRun": false
+        },
+        "className": ""
+      },
+      {
+        "source": "node_b2b3af08-d13f-4703-8f80-01fd9bd98714",
+        "sourceHandle": "0_node_b2b3af08-d13f-4703-8f80-01fd9bd98714",
+        "target": "node_08b3497e-4ba6-4460-824b-d2d0e10a10d0",
+        "targetHandle": "0_node_08b3497e-4ba6-4460-824b-d2d0e10a10d0",
+        "id": "reactflow__edge-node_b2b3af08-d13f-4703-8f80-01fd9bd987140_node_b2b3af08-d13f-4703-8f80-01fd9bd98714-node_08b3497e-4ba6-4460-824b-d2d0e10a10d00_node_08b3497e-4ba6-4460-824b-d2d0e10a10d0",
+        "data": {
+          "hasRun": false
+        },
+        "className": ""
+      },
+      {
+        "source": "node_daebab6c-4e67-4f4a-ab66-b0c7e128d3cc",
+        "sourceHandle": "0_node_daebab6c-4e67-4f4a-ab66-b0c7e128d3cc",
+        "target": "node_e07b6787-982e-4078-a11b-98f6abc99cd7",
+        "targetHandle": "0_node_e07b6787-982e-4078-a11b-98f6abc99cd7",
+        "id": "reactflow__edge-node_daebab6c-4e67-4f4a-ab66-b0c7e128d3cc0_node_daebab6c-4e67-4f4a-ab66-b0c7e128d3cc-node_e07b6787-982e-4078-a11b-98f6abc99cd70_node_e07b6787-982e-4078-a11b-98f6abc99cd7",
+        "data": {
+          "hasRun": false
+        },
+        "className": ""
+      },
+      {
+        "source": "node_e07b6787-982e-4078-a11b-98f6abc99cd7",
+        "sourceHandle": "0_node_e07b6787-982e-4078-a11b-98f6abc99cd7",
+        "target": "node_40324d5c-ccec-4517-b147-bc6ab5d1aebc",
+        "targetHandle": "0_node_40324d5c-ccec-4517-b147-bc6ab5d1aebc",
+        "id": "reactflow__edge-node_e07b6787-982e-4078-a11b-98f6abc99cd70_node_e07b6787-982e-4078-a11b-98f6abc99cd7-node_40324d5c-ccec-4517-b147-bc6ab5d1aebc0_node_40324d5c-ccec-4517-b147-bc6ab5d1aebc",
+        "data": {
+          "hasRun": false
+        },
+        "className": ""
+      },
+      {
+        "source": "node_40324d5c-ccec-4517-b147-bc6ab5d1aebc",
+        "sourceHandle": "0_node_40324d5c-ccec-4517-b147-bc6ab5d1aebc",
+        "target": "node_1679c1a9-7393-462a-999f-ca8a214fd3ad",
+        "targetHandle": "0_node_1679c1a9-7393-462a-999f-ca8a214fd3ad",
+        "id": "reactflow__edge-node_40324d5c-ccec-4517-b147-bc6ab5d1aebc0_node_40324d5c-ccec-4517-b147-bc6ab5d1aebc-node_1679c1a9-7393-462a-999f-ca8a214fd3ad0_node_1679c1a9-7393-462a-999f-ca8a214fd3ad",
+        "data": {
+          "hasRun": false
+        },
+        "className": ""
+      },
+      {
+        "source": "node_1679c1a9-7393-462a-999f-ca8a214fd3ad",
+        "sourceHandle": "0_node_1679c1a9-7393-462a-999f-ca8a214fd3ad",
+        "target": "node_40a54ad8-81a1-4f3a-9faa-08cd77939a74",
+        "targetHandle": "0_node_40a54ad8-81a1-4f3a-9faa-08cd77939a74",
+        "id": "reactflow__edge-node_1679c1a9-7393-462a-999f-ca8a214fd3ad0_node_1679c1a9-7393-462a-999f-ca8a214fd3ad-node_40a54ad8-81a1-4f3a-9faa-08cd77939a740_node_40a54ad8-81a1-4f3a-9faa-08cd77939a74",
+        "data": {
+          "hasRun": false
+        },
+        "className": ""
+      },
+      {
+        "source": "node_a9f8a376-4b3c-4369-89fa-e29b634a6bf2",
+        "sourceHandle": "0_node_a9f8a376-4b3c-4369-89fa-e29b634a6bf2",
+        "target": "node_40a54ad8-81a1-4f3a-9faa-08cd77939a74",
+        "targetHandle": "0_node_40a54ad8-81a1-4f3a-9faa-08cd77939a74",
+        "id": "reactflow__edge-node_a9f8a376-4b3c-4369-89fa-e29b634a6bf20_node_a9f8a376-4b3c-4369-89fa-e29b634a6bf2-node_40a54ad8-81a1-4f3a-9faa-08cd77939a740_node_40a54ad8-81a1-4f3a-9faa-08cd77939a74",
+        "data": {
+          "hasRun": false
+        },
+        "className": ""
+      },
+      {
+        "source": "node_67afb475-865c-4eed-a946-9e04f67028ec",
+        "sourceHandle": "0_node_67afb475-865c-4eed-a946-9e04f67028ec",
+        "target": "node_40a54ad8-81a1-4f3a-9faa-08cd77939a74",
+        "targetHandle": "0_node_40a54ad8-81a1-4f3a-9faa-08cd77939a74",
+        "id": "reactflow__edge-node_67afb475-865c-4eed-a946-9e04f67028ec0_node_67afb475-865c-4eed-a946-9e04f67028ec-node_40a54ad8-81a1-4f3a-9faa-08cd77939a740_node_40a54ad8-81a1-4f3a-9faa-08cd77939a74",
+        "data": {
+          "hasRun": false
+        },
+        "className": ""
+      },
+      {
+        "source": "node_d1d5b487-e1a3-4001-9444-b9d8304d6138",
+        "sourceHandle": "0_node_d1d5b487-e1a3-4001-9444-b9d8304d6138",
+        "target": "node_67afb475-865c-4eed-a946-9e04f67028ec",
+        "targetHandle": "0_node_67afb475-865c-4eed-a946-9e04f67028ec",
+        "id": "reactflow__edge-node_d1d5b487-e1a3-4001-9444-b9d8304d61380_node_d1d5b487-e1a3-4001-9444-b9d8304d6138-node_67afb475-865c-4eed-a946-9e04f67028ec0_node_67afb475-865c-4eed-a946-9e04f67028ec",
+        "data": {
+          "hasRun": false
+        },
+        "className": ""
+      },
+      {
+        "source": "node_5de76c25-f3f9-4548-a4c1-8a0f7c464157",
+        "sourceHandle": "0_node_5de76c25-f3f9-4548-a4c1-8a0f7c464157",
+        "target": "node_a9f8a376-4b3c-4369-89fa-e29b634a6bf2",
+        "targetHandle": "0_node_a9f8a376-4b3c-4369-89fa-e29b634a6bf2",
+        "id": "reactflow__edge-node_5de76c25-f3f9-4548-a4c1-8a0f7c4641570_node_5de76c25-f3f9-4548-a4c1-8a0f7c464157-node_a9f8a376-4b3c-4369-89fa-e29b634a6bf20_node_a9f8a376-4b3c-4369-89fa-e29b634a6bf2",
+        "data": {
+          "hasRun": false
+        },
+        "className": ""
+      },
+      {
+        "source": "node_7518e11d-22fc-4d3e-8767-3d55722a998f",
+        "sourceHandle": "0_node_7518e11d-22fc-4d3e-8767-3d55722a998f",
+        "target": "node_d1d5b487-e1a3-4001-9444-b9d8304d6138",
+        "targetHandle": "0_node_d1d5b487-e1a3-4001-9444-b9d8304d6138",
+        "id": "reactflow__edge-node_7518e11d-22fc-4d3e-8767-3d55722a998f0_node_7518e11d-22fc-4d3e-8767-3d55722a998f-node_d1d5b487-e1a3-4001-9444-b9d8304d61380_node_d1d5b487-e1a3-4001-9444-b9d8304d6138",
+        "data": {
+          "hasRun": false
+        },
+        "className": ""
+      },
+      {
+        "source": "node_6fe226d2-505f-4cdb-a7ee-ab6a7b784f1b",
+        "sourceHandle": "0_node_6fe226d2-505f-4cdb-a7ee-ab6a7b784f1b",
+        "target": "node_5de76c25-f3f9-4548-a4c1-8a0f7c464157",
+        "targetHandle": "0_node_5de76c25-f3f9-4548-a4c1-8a0f7c464157",
+        "id": "reactflow__edge-node_6fe226d2-505f-4cdb-a7ee-ab6a7b784f1b0_node_6fe226d2-505f-4cdb-a7ee-ab6a7b784f1b-node_5de76c25-f3f9-4548-a4c1-8a0f7c4641570_node_5de76c25-f3f9-4548-a4c1-8a0f7c464157",
+        "data": {
+          "hasRun": false
+        },
+        "className": ""
+      },
+      {
+        "source": "node_827b7288-1dfa-47ca-b731-04cd433a706d",
+        "sourceHandle": "0_node_827b7288-1dfa-47ca-b731-04cd433a706d",
+        "target": "node_7518e11d-22fc-4d3e-8767-3d55722a998f",
+        "targetHandle": "0_node_7518e11d-22fc-4d3e-8767-3d55722a998f",
+        "id": "reactflow__edge-node_827b7288-1dfa-47ca-b731-04cd433a706d0_node_827b7288-1dfa-47ca-b731-04cd433a706d-node_7518e11d-22fc-4d3e-8767-3d55722a998f0_node_7518e11d-22fc-4d3e-8767-3d55722a998f",
+        "data": {
+          "hasRun": false
+        },
+        "className": ""
+      },
+      {
+        "source": "node_d23945bf-e694-4280-bad5-404970265629",
+        "sourceHandle": "0_node_d23945bf-e694-4280-bad5-404970265629",
+        "target": "node_6fe226d2-505f-4cdb-a7ee-ab6a7b784f1b",
+        "targetHandle": "0_node_6fe226d2-505f-4cdb-a7ee-ab6a7b784f1b",
+        "id": "reactflow__edge-node_d23945bf-e694-4280-bad5-4049702656290_node_d23945bf-e694-4280-bad5-404970265629-node_6fe226d2-505f-4cdb-a7ee-ab6a7b784f1b0_node_6fe226d2-505f-4cdb-a7ee-ab6a7b784f1b",
+        "data": {
+          "hasRun": false
+        },
+        "className": ""
+      },
+      {
+        "source": "node_65cdfbe3-13bf-4adc-ace7-726be50eec96",
+        "sourceHandle": "0_node_65cdfbe3-13bf-4adc-ace7-726be50eec96",
+        "target": "node_6d9d3623-d213-4b5d-b8a7-02e3b41d9cc4",
+        "targetHandle": "0_node_6d9d3623-d213-4b5d-b8a7-02e3b41d9cc4",
+        "id": "reactflow__edge-node_65cdfbe3-13bf-4adc-ace7-726be50eec960_node_65cdfbe3-13bf-4adc-ace7-726be50eec96-node_6d9d3623-d213-4b5d-b8a7-02e3b41d9cc40_node_6d9d3623-d213-4b5d-b8a7-02e3b41d9cc4",
+        "data": {
+          "hasRun": false
+        },
+        "className": ""
+      },
+      {
+        "source": "node_25bf4e3a-5f08-4421-b6e8-fdf089230c65",
+        "sourceHandle": "0_node_25bf4e3a-5f08-4421-b6e8-fdf089230c65",
+        "target": "node_b2fed9cb-dd83-4e97-b0b3-abf4d5e979a5",
+        "targetHandle": "0_node_b2fed9cb-dd83-4e97-b0b3-abf4d5e979a5",
+        "id": "reactflow__edge-node_25bf4e3a-5f08-4421-b6e8-fdf089230c650_node_25bf4e3a-5f08-4421-b6e8-fdf089230c65-node_b2fed9cb-dd83-4e97-b0b3-abf4d5e979a50_node_b2fed9cb-dd83-4e97-b0b3-abf4d5e979a5",
+        "data": {
+          "hasRun": false
+        },
+        "className": ""
+      },
+      {
+        "source": "node_08b3497e-4ba6-4460-824b-d2d0e10a10d0",
+        "sourceHandle": "0_node_08b3497e-4ba6-4460-824b-d2d0e10a10d0",
+        "target": "node_abf4d086-fcfe-4032-bf85-520fed170203",
+        "targetHandle": "0_node_abf4d086-fcfe-4032-bf85-520fed170203",
+        "id": "reactflow__edge-node_08b3497e-4ba6-4460-824b-d2d0e10a10d00_node_08b3497e-4ba6-4460-824b-d2d0e10a10d0-node_abf4d086-fcfe-4032-bf85-520fed1702030_node_abf4d086-fcfe-4032-bf85-520fed170203",
+        "data": {
+          "hasRun": false
+        },
+        "className": ""
+      },
+      {
+        "source": "node_6d9d3623-d213-4b5d-b8a7-02e3b41d9cc4",
+        "sourceHandle": "0_node_6d9d3623-d213-4b5d-b8a7-02e3b41d9cc4",
+        "target": "node_daebab6c-4e67-4f4a-ab66-b0c7e128d3cc",
+        "targetHandle": "0_node_daebab6c-4e67-4f4a-ab66-b0c7e128d3cc",
+        "id": "reactflow__edge-node_6d9d3623-d213-4b5d-b8a7-02e3b41d9cc40_node_6d9d3623-d213-4b5d-b8a7-02e3b41d9cc4-node_daebab6c-4e67-4f4a-ab66-b0c7e128d3cc0_node_daebab6c-4e67-4f4a-ab66-b0c7e128d3cc",
+        "data": {
+          "hasRun": false
+        },
+        "className": ""
+      },
+      {
+        "source": "node_b2fed9cb-dd83-4e97-b0b3-abf4d5e979a5",
+        "sourceHandle": "0_node_b2fed9cb-dd83-4e97-b0b3-abf4d5e979a5",
+        "target": "node_827b7288-1dfa-47ca-b731-04cd433a706d",
+        "targetHandle": "0_node_827b7288-1dfa-47ca-b731-04cd433a706d",
+        "id": "reactflow__edge-node_b2fed9cb-dd83-4e97-b0b3-abf4d5e979a50_node_b2fed9cb-dd83-4e97-b0b3-abf4d5e979a5-node_827b7288-1dfa-47ca-b731-04cd433a706d0_node_827b7288-1dfa-47ca-b731-04cd433a706d",
+        "data": {
+          "hasRun": false
+        },
+        "className": ""
+      },
+      {
+        "source": "node_abf4d086-fcfe-4032-bf85-520fed170203",
+        "sourceHandle": "0_node_abf4d086-fcfe-4032-bf85-520fed170203",
+        "target": "node_d23945bf-e694-4280-bad5-404970265629",
+        "targetHandle": "0_node_d23945bf-e694-4280-bad5-404970265629",
+        "id": "reactflow__edge-node_abf4d086-fcfe-4032-bf85-520fed1702030_node_abf4d086-fcfe-4032-bf85-520fed170203-node_d23945bf-e694-4280-bad5-4049702656290_node_d23945bf-e694-4280-bad5-404970265629",
+        "data": {
+          "hasRun": false
+        },
+        "className": ""
+      }
+    ],
+    "viewport": {
+      "x": -1495.2769931690564,
+      "y": 46.94972429600705,
+      "zoom": 0.9999999999999999
+    }
+  }
+}
