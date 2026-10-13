@@ -132,7 +132,7 @@ Dataset composition:
 * 19 patients with lung metastases
 * 32 patients without lung metastases
 
-The choice between the Light and Full POC should be mainly guided by your available computing resources.
+The choice between the Light and Full POC should be mainly guided by your **available computing resources**.
 
 ## The Clinical Problem
 
@@ -233,12 +233,12 @@ Apply the selected settings to extract radiomics features from the entire datase
 {% step %}
 ### [Learning Module](4.-learning-module.md)
 
-Train and evaluate multiple classification models using the radiomics features extracted from each imaging modality. (AVEC FINALIZE MODEL)
+Create multiple pipelines to train and evaluate classification models and identify the best-performing approach.
 {% endstep %}
 
 {% step %}
 ### [Results Analysis & Discussion](5.-results-analysis-and-discussion.md)&#x20;
 
-Compare model performance across machine-learning experiments and identify the best-performing model.
+Train and evaluate the final selected model, analyze and discuss the findings and how they relate to the biology of the soft tissue sarcomas.
 {% endstep %}
 {% endstepper %}
