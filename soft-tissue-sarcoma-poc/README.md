@@ -34,6 +34,10 @@ layout:
 # Soft Tissue Sarcoma POC
 
 {% hint style="info" %}
+For smoother testing, the [troubleshooting page](../troubleshooting.md) is there to assist you.
+{% endhint %}
+
+{% hint style="info" %}
 If reading isn't your favorite part, don't worry. This POC was designed so you can easily follow along by looking at the figures alone.
 {% endhint %}
 

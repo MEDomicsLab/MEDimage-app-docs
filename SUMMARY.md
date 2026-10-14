@@ -12,6 +12,7 @@
     * [Single Scan](radiomics/feature-extraction/single-scan.md)
 * [👨‍🏫 Learning](learning.md)
 * [♻️ Code generation](code-generation.md)
+* [Troubleshooting](troubleshooting.md)
 * [🕹️ Renal Cell Carcinoma Demo](renal-cell-carcinoma-demo.md)
 * [Soft Tissue Sarcoma POC](soft-tissue-sarcoma-poc/README.md)
   * [1. Single Scan Extraction](soft-tissue-sarcoma-poc/1.-single-scan-extraction.md)
