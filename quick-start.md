@@ -4,12 +4,12 @@ description: Installation of the app
 
 # 👊 Quick start
 
-## How to download and install The MEDiml Application
+## How to Download and Install the MEDiml Application
 
 Below are tutorials for downloading and installing the app on various operating systems.
 
 {% hint style="warning" %}
-These tutorials are currently outdated and will be updated soon. In the meantime, please follow the instructions below.
+These video tutorials are currently outdated and will be updated soon. In the meantime, please follow the instructions below.
 {% endhint %}
 
 {% tabs %}
@@ -30,11 +30,35 @@ This tutorial is for MEDomics (the parent app) and will be updated soon, but the
 {% endtab %}
 {% endtabs %}
 
+#### Install MEDiml-app
+
+Download the installer for your operating system from the MEDiml-app releases page, then follow the steps below.
+
+{% tabs %}
+{% tab title="Windows" %}
+1. Run the downloaded `.exe` file.
+2. If Windows SmartScreen shows a warning, click **More info** → **Run anyway**.
+3. Follow the installer, then open **MEDiml-app** from the Start menu.
+{% endtab %}
+
+{% tab title="Ubuntu" %}
+1. Open a terminal in the folder containing the `.deb` file.
+2. Install it using: `bash sudo apt install ./MEDiml-app_*.deb`
+3. Open **MEDiml-app** from the Start menu.
+{% endtab %}
+
+{% tab title="MacOS" %}
+1. Open the downloaded `.dmg` file.
+2. Drag **MEDiml-app** into the **Applications** folder.
+3. Open it from **Applications**. If macOS blocks it, right-click the app → **Open** → **Open**.
+{% endtab %}
+{% endtabs %}
+
 ### The MEDiml application architecture <a href="#the-medomics-platform-architecture" id="the-medomics-platform-architecture"></a>
 
-MEDiml follows the same architechture of its [mother application](https://medomics.app/). [This visual guide](https://medomicslab.gitbook.io/medomics-docs/contributing#the-medomics-platform-architecture) is designed to support new contributors in understanding the application’s structure, streamlining the integration of new features, and aiding efficient navigation through the codebase.
+MEDiml follows the same architecture as its [parent](https://medomics.app/) [application](https://medomics.app/). [This visual guide](https://medomicslab.gitbook.io/medomics-docs/contributing#the-medomics-platform-architecture) is designed to support new contributors in understanding the application’s structure, streamlining the integration of new features, and aiding efficient navigation through the codebase.
 
-### Contribute to MEDiml-App🌱 <a href="#contribute-to-medomics" id="contribute-to-medomics"></a>
+## How to Contribute to MEDiml-App🌱 <a href="#contribute-to-medomics" id="contribute-to-medomics"></a>
 
 #### 1. Prerequisites <a href="#id-1.-prerequisites" id="id-1.-prerequisites"></a>
 

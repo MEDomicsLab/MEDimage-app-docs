@@ -48,7 +48,12 @@ This application is part of the [MEDomics ](https://medomics-udes.gitbook.io/med
 
 ### The MEDiml application
 
-The MEDiml-app is a graphical implementation of the MEDiml Python package. It enables the use of all MEDiml functionalities through an interactive interface. These functionalities include image processing, radiomics feature extraction, and machine learning tools.
+MEDiml stands for MEDical Image analysis with Machine Learning. It is an [IBSI](https://theibsi.github.io/)-compliant open-source platform designed to improve the accessibility of radiomics for clinical researchers and\
+facilitate collaboration between multidisciplinary teams.
+
+MEDiml provides a complexity-driven workflow that&#x20;compares models built from progressively more complex radiomic feature sets, so that researchers can identify a compact feature set suited to a clinical question.&#x20;_MEDiml-app_ shares the same computational framework as the [_MEDiml-pkg_](https://github.com/MEDomicsLab/MEDiml-pkg/), so that code generation exposes visually configured workflows as Python code that researchers can inspect and extend. The two interfaces therefore allow researchers with&#x20;different programming experience to use the same analysis implementation. The following figure provides a full overview of MEDiml.
+
+<figure><img src=".gitbook/assets/Introductory_Figure_MEDiml.png" alt=""><figcaption><p>Overview of the MEDiml application and Python package.</p></figcaption></figure>
 
 ### Our goal
 
@@ -121,7 +126,7 @@ Read the preprint here:
 
 ### Contributing authors
 
-The following table acknowledges the MEDiml contributors who helped develop, maintain, test, and improve the application.
+The following table acknowledges all contributors who helped develop, maintain, test, and improve the application.
 
 | Given Name          | Surname                 |
 | ------------------- | ----------------------- |
@@ -141,9 +146,9 @@ The following table acknowledges the MEDiml contributors who helped develop, mai
 | Jérémy              | Dana<sup>3</sup>        |
 | Martin              | Vallières<sup>1,2</sup> |
 
-1. Medical Physics Unit, Department of Oncology, McGill University, Montréal, Canada
-2. Department of Computer Science, Université de Sherbrooke, Sherbrooke, Canada
-3. Department of Radiology, Centre de Recherche du Centre Hospitalier de l'Université de Montréal, Montréal, Canada
+1. _Medical Physics Unit, Department of Oncology, McGill University, Montréal, Canada_
+2. _Department of Computer Science, Université de Sherbrooke, Sherbrooke, Canada_
+3. _Department of Radiology, Centre de Recherche du Centre Hospitalier de l'Université de Montréal, Montréal, Canada_
 
 ### Quick documentation guide
 

@@ -2,6 +2,7 @@
 description: >-
   This is a tutorial on how to use the software to extract radiomic features
   from a single scan.
+icon: face-viewfinder
 ---
 
 # Single Scan
