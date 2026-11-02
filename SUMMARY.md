@@ -21,7 +21,7 @@
 * [Troubleshooting](troubleshooting.md)
 * [🕹️ Renal Cell Carcinoma Demo](renal-cell-carcinoma-demo.md)
 * [Limitations and Future Work](limitations-and-future-work.md)
-* [👩‍💻 Contributing](contributing.md)
+* [Contributing](contributing.md)
 * [🤓 About us](about-us.md)
 
 ## FORMS
