@@ -1,4 +1,8 @@
-# 🤓 About us
+---
+icon: circle-question
+---
+
+# About us
 
 ## :pilot: About us
 

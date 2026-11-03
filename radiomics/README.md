@@ -1,10 +1,11 @@
 ---
 description: Brief introduction to Radiomics
+icon: brain
 cover: ../.gitbook/assets/1_G8AQ-37RCqf2rN6RbJvZ1A.webp
 coverY: 148.34772896500374
 ---
 
-# 🧠 Radiomics
+# Radiomics
 
 ### What is radiomics?
 

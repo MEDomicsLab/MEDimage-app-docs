@@ -3,9 +3,10 @@ description: >-
   Our software provides tools for model training using extracted features and
   facilitates the analysis of machine learning results, with a focus on
   identifying the optimal feature types.
+icon: microchip-ai
 ---
 
-# 👨‍🏫 Learning
+# Learning
 
 {% hint style="success" %}
 A tutorial video is available at the bottom of the page

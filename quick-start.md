@@ -1,8 +1,9 @@
 ---
 description: Installation of the app
+icon: play
 ---
 
-# 👊 Quick start
+# Quick start
 
 ## How to Download and Install the MEDiml Application
 

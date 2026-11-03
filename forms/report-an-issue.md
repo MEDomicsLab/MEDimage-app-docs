@@ -1,4 +1,8 @@
-# ⚠️ Report an issue
+---
+icon: hexagon-exclamation
+---
+
+# Report an issue
 
 {% hint style="success" %}
 Below is a brief guide on how to submit a new issue.
@@ -14,4 +18,4 @@ Now, follow the steps described below to fill in the information about your issu
 
 <figure><img src="../.gitbook/assets/NewIssueGuide.png" alt=""><figcaption></figcaption></figure>
 
-If you have any questions or need further assistance, please do not hesitate to [contact us.](contact-us.md)
+If you have any questions or need further assistance, please do not hesitate to [contact us.](/broken/pages/dkwlHK5JQCSSkD9Bsf5L)

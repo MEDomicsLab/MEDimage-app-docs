@@ -1,8 +1,9 @@
 ---
 description: Instruction on how to use the code generation feature.
+icon: recycle
 ---
 
-# ♻️ Code generation
+# Code generation
 
 The code generation feature in the learning module allows users to generate Python code for their experiments with a simple click. This feature enables users to make in-depth changes to the experiment code, share it with other computer scientists, and navigate seamlessly between the user interface and the code base.&#x20;
 
@@ -54,4 +55,4 @@ conda activate med_conda_env
 python -m ipykernel install --user --name=med_conda_env
 ```
 
-Please feel free to [contact us](forms/contact-us.md) if you need any further assistance :innocent:.
+Please feel free to [contact us](/broken/pages/dkwlHK5JQCSSkD9Bsf5L) if you need any further assistance :innocent:.

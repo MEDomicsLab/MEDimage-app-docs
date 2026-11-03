@@ -1,5 +1,6 @@
 ---
 description: MEDiml, the application
+icon: hand-wave
 cover: .gitbook/assets/cancer-ai.jpg
 coverY: -9.703648548026806
 layout:
@@ -28,7 +29,7 @@ layout:
     visible: true
 ---
 
-# 👋 Welcome!
+# Welcome!
 
 {% hint style="warning" %}
 **MEDimage is now MEDiml.**

@@ -1,8 +1,9 @@
 ---
 description: Rundown of the user-interface and its various parts
+icon: grid-round-4
 ---
 
-# 👀 Interface overview
+# Interface overview
 
 ### Opening page
 

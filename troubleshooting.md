@@ -77,7 +77,7 @@ If the server does not start:
 
 #### Still Not Working?
 
-If the status never changes to **Running**, please [contact the MEDiml team](forms/contact-us.md) and provide any error messages available in the developer console.
+If the status never changes to **Running**, please [contact the MEDiml team](/broken/pages/dkwlHK5JQCSSkD9Bsf5L) and provide any error messages available in the developer console.
 
 #### Python Environment Path
 
@@ -120,7 +120,7 @@ If needed:
 * Wait at least **60 seconds** between attempts.
 * Retry several times.
 
-If the problem persists, [contact](forms/contact-us.md) the MEDiml team.
+If the problem persists, [contact](/broken/pages/dkwlHK5JQCSSkD9Bsf5L) the MEDiml team.
 
 ### First Setup Modal
 
@@ -224,6 +224,6 @@ If none of the above solutions resolve the problem:
 1. Verify all statuses in the **Settings** page.
 2. Open the **Developer Tools Console** and collect any error messages.
 3. Take screenshots when possible.
-4. [Contact the MEDiml team](forms/contact-us.md) with the collected information.
+4. [Contact the MEDiml team](/broken/pages/dkwlHK5JQCSSkD9Bsf5L) with the collected information.
 
 The more details you provide, the faster the issue can be diagnosed and resolved.

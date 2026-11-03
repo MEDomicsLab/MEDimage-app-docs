@@ -2,7 +2,7 @@
 description: >-
   This section gives a brief tutorial on how to use our software to extract
   radiomic features from both single and multiple images.
-icon: brain
+icon: pickaxe
 ---
 
 # Feature Extraction
