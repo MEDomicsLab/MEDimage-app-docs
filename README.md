@@ -41,6 +41,15 @@ This application represents the latest version of the radiomics module used in t
 
 Welcome to the MEDiml-app documentation, where you will find all the resources you need to download, install, and use the application.
 
+### Quick documentation guide
+
+* This page provides a general introduction to the MEDiml application and the people behind it.
+* To download and install the application, go to the [next page](quick-start.md).
+* For tutorials, refer to the [radiomics page](radiomics/).
+* Use the [_Forms_ ](https://app.gitbook.com/s/WC0t7nEhhoOT73GRY714/forms)section to contact us or to report an issue.
+* The [_Media_ ](https://app.gitbook.com/s/WC0t7nEhhoOT73GRY714/media)section contains all our communication and interaction websites.
+* If you are ready to add your touch to our application, refer to the [contribution page](contributing.md).
+
 ### MEDomics
 
 This application is part of the [MEDomics ](https://medomics-udes.gitbook.io/medomicslab-docs)project. It provides a graphical user interface to interact with the [MEDiml package](https://github.com/MEDomics-UdeS/MEDimage), enabling users to extract radiomics features from medical images and analyze the data using machine learning models.
@@ -150,11 +159,3 @@ The following table acknowledges all contributors who helped develop, maintain, 
 1. _Medical Physics Unit, Department of Oncology, McGill University, Montréal, Canada_
 2. _Department of Computer Science, Université de Sherbrooke, Sherbrooke, Canada_
 3. _Department of Radiology, Centre de Recherche du Centre Hospitalier de l'Université de Montréal, Montréal, Canada_
-
-### Quick documentation guide
-
-* To download and install the application, go to the [next page](quick-start.md).
-* For tutorials, refer to the [radiomics page](radiomics/).
-* Use the [_Forms_ ](https://app.gitbook.com/s/WC0t7nEhhoOT73GRY714/forms)section to contact us or to report an issue.
-* The [_Media_ ](https://app.gitbook.com/s/WC0t7nEhhoOT73GRY714/media)section contains all our communication and interaction websites.
-* If you are ready to add your touch to our application, refer to the [contribution page](contributing.md).

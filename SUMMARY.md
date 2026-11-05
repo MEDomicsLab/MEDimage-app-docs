@@ -33,5 +33,6 @@
 
 * [Official website](https://mediml.app/)
 * [GitHub](https://github.com/MEDomicsLab/mediml-app/)
+* [Our lab](https://www.medomicslab.com/)
 * [YouTube](https://www.youtube.com/@MEDomicsLab)
 * [Discord](https://discord.gg/kzNVmDsXWp)
